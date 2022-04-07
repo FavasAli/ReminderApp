@@ -1,0 +1,71 @@
+<section>
+
+  <div class="container mt-4">
+    <h1 style="text-align: center;" class="mb-3">Reminder History</h1>
+<form [formGroup]="formValue">
+      <table class="table w-75" style="align-items: center; text-align: center;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Desciption</th>
+            <th scope="col">Actions</th>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of event;let  i = index">
+            <td>{{row.date}}</td>
+            <td>{{row.desc}}</td>
+            <td>
+              <button type="submit" class="btn btn-danger me-2" (click)="deleteEvent()" style="border: none; background-color: red;">Delete</button>
+              <button (click)="editItem(i)" type="button" class="btn btn-primary" style="background-color: blue; border: none;" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</form>
+    <div style="text-align: center;">
+      <a routerLink="/dashboard">Back to Dashboard</a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     
+
+        <div class="mb-3 form-group">
+    
+
+          <input type="date" class="form-control" id="date" formControlName="date"  placeholder="Date">
+        </div>
+
+        <div class="mb-3 form-group">
+
+     
+
+          <textarea class="form-control" id="desc" formControlName="desc" placeholder="Desciption" rows="4"></textarea>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> 

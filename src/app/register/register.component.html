@@ -1,0 +1,81 @@
+<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+                <div class="mb-3 form-group">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">User Id</label> -->
+                  <input type="text" class="form-control" id="uname" placeholder="Enter Your Name"
+                    formControlName="uname">
+                </div>
+                <div style="color: red;"
+                  *ngIf="(this.registerForm.get('uname')?.touched||this.registerForm.get('uname')?.dirty) &&(this.registerForm.get('uname')?.errors)">
+                  Invalid Usernameb
+                </div>
+
+
+
+                <div class="mb-3 form-group">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">User Id</label> -->
+                  <input type="text" class="form-control" id="uid" placeholder="Enter Your Id" formControlName="uid">
+                </div>
+                <div style="color: red;"
+                  *ngIf="(this.registerForm.get('uid')?.touched||this.registerForm.get('uid')?.dirty) &&(this.registerForm.get('uid')?.errors)">
+                  Invalid User Id
+                </div>
+
+
+
+                <div class="mb-3 form-group">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">User Id</label> -->
+                  <input type="password" class="form-control" id="pass" placeholder="Enter Your Password"
+                    formControlName="pass">
+                </div>
+                <div style="color: red;"
+                  *ngIf="(this.registerForm.get('pass')?.touched||this.registerForm.get('pass')?.dirty) &&(this.registerForm.get('pass')?.errors)">
+                  Invalid Password
+                </div>
+
+
+
+                <!-- <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                  </div> -->
+
+                <!-- <div class="form-check d-flex justify-content-center mb-5">
+                    <input
+                      class="form-check-input me-2"
+                      type="checkbox"
+                      value=""
+                      id="form2Example3cg"
+                    />
+                    <label class="form-check-label" for="form2Example3g">
+                      I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                    </label>
+                  </div> -->
+
+                <div class="d-flex justify-content-center form-group">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
